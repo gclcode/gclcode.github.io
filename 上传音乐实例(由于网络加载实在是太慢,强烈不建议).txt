@@ -1,0 +1,1 @@
+{% aplayer "Ò¹¡¢Ó©»ğ³æºÍÄã" "AniFace" "/musics/AniFace-Ò¹¡¢Ó©»ğ³æºÍÄã.mp3" "/images/image_1.png" %}

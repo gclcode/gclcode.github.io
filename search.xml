@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[第一篇博客]]></title>
-    <url>%2F2019%2F07%2F15%2F%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[第一篇博客Nice Boy！Nice Girl!分页阅读更多 列表1 列1 列表2 列表3百度 字体倾斜字体加粗 1# hexo clean 未经过授权不得引用]]></content>
+    <title><![CDATA[关于Hexo命令的问题]]></title>
+    <url>%2F2019%2F07%2F15%2F%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BAHexo-deploy%E5%91%BD%E4%BB%A4%E6%8A%A5%E9%94%99%2F</url>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在使用Hexo工具来完善我们的博客时，我们有时也会忘记一些基础的命令。这篇博客是我在安装部署Hexo时遇到的问题和解办法，希望对大家有所帮助。 使用Hexo deploy命令生成静态博客时出错 第一种出错情况如下 1ERROR Deployer not found: 通常使用该命令解决此问题 1npm install hexo-deployer-git --save 第二种出错情况如下 1ERROR Deployer not found: git 通常使用该命令解决此问题 1npm install hexo-server --save 静态博客Hexo命令流程 生成一个博客日志 1hexo new 文件名 清理博客缓存 1heox clean 生成静态博客文件 1hexo generate 在本地运行博客,默认端口为4000 1hexo server 如果本机的4000端口已经被，可以通过下边的命令使用其他端口 1hexo server -port 未被使用的端口号 hexo server 部署博客到远端 1hexo deploy 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
       <categories>
-        <category>后端</category>
+        <category>网站</category>
       </categories>
       <tags>
-        <tag>导航</tag>
-        <tag>分享</tag>
+        <tag>博客</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[帅气小哥哥的专属博客]]></title>
     <url>%2F2019%2F07%2F14%2F%E5%B8%85%E6%B0%94%E5%B0%8F%E5%93%A5%E5%93%A5%E7%9A%84%E4%B8%93%E5%B1%9E%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-ZFMtjMPv"), narrow: false, autoplay: false, showlrc: false, music: { title: "夜、萤火虫和你", author: "AniFace", url: "/musics/AniFace-夜、萤火虫和你.mp3", pic: "/images/image_2.png", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap);]]></content>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一次搭建自己的博客，有许多地方还不太熟悉。希望自己在学习知识的同时能够坚持写博客，提高自己的总结能力，把学习知识的过程中遇到的问题及解决方法和技术感悟总结出来，不仅可以分享给有需要的人也可以为日后遇到的问题提供参考。 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
   </entry>
 </search>
