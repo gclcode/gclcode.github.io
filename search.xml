@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[第一篇博客]]></title>
+    <url>%2F2019%2F07%2F15%2F%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[第一篇博客Nice Boy！Nice Girl!分页阅读更多 列表1 列1 列表2 列表3百度 字体倾斜字体加粗 1# hexo clean 未经过授权不得引用]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[帅气小哥哥的专属博客]]></title>
+    <url>%2F2019%2F07%2F14%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[配置Hexo过程遇到的命令新建一个项目1$ hexo new "My New Post" More info: Writing 运行项目1$ hexo server More info: Server 创建静态项目1$ hexo generate More info: Generating 部署项目到远端1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
