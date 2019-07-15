@@ -15,6 +15,6 @@
   <entry>
     <title><![CDATA[帅气小哥哥的专属博客]]></title>
     <url>%2F2019%2F07%2F14%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[配置Hexo过程遇到的命令新建一个项目1$ hexo new "My New Post" More info: Writing 运行项目1$ hexo server More info: Server 创建静态项目1$ hexo generate More info: Generating 部署项目到远端1$ hexo deploy More info: Deployment]]></content>
+    <content type="text"><![CDATA[第一篇文章请多多见谅]]></content>
   </entry>
 </search>
