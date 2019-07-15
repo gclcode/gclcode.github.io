@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[关于Hexo命令的问题]]></title>
     <url>%2F2019%2F07%2F15%2F%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BAHexo-deploy%E5%91%BD%E4%BB%A4%E6%8A%A5%E9%94%99%2F</url>
-    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在使用Hexo工具来完善我们的博客时，我们有时也会忘记一些基础的命令。这篇博客是我在安装部署Hexo时遇到的问题和解办法，希望对大家有所帮助。 使用Hexo deploy命令生成静态博客时出错 第一种出错情况如下 1ERROR Deployer not found: 通常使用该命令解决此问题 1npm install hexo-deployer-git --save 第二种出错情况如下 1ERROR Deployer not found: git 通常使用该命令解决此问题 1npm install hexo-server --save 静态博客Hexo命令流程 生成一个博客日志 1hexo new 文件名 清理博客缓存 1heox clean 生成静态博客文件 1hexo generate 在本地运行博客,默认端口为4000 1hexo server 如果本机的4000端口已经被，可以通过下边的命令使用其他端口 1hexo server -port 未被使用的端口号 hexo server 部署博客到远端 1hexo deploy 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在使用Hexo工具来完善我们的博客时，我们有时也会忘记一些基础的命令。这篇博客是我在安装部署Hexo时遇到的问题和解办法，希望对大家有所帮助。 使用Hexo deploy命令生成静态博客时出错 第一种出错情况如下 1ERROR Deployer not found: 通常使用该命令解决此问题 1npm install hexo-deployer-git --save 第二种出错情况如下 1ERROR Deployer not found: git 通常使用该命令解决此问题 1npm install hexo-server --save 静态博客Hexo命令流程 生成一个博客日志 1hexo new 文件名 清理博客缓存 1heox clean 生成静态博客文件 1hexo generate 在本地运行博客,默认端口为4000 1hexo server 如果本机的4000端口已经被，可以通过下边的命令使用其他端口 1hexo server -port 未被使用的端口号 部署博客到远端 1hexo deploy 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
       <categories>
         <category>网站</category>
       </categories>
