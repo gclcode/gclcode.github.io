@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[使用github搭建博客(一)]]></title>
+    <url>%2F2019%2F07%2F16%2F%E4%BD%BF%E7%94%A8github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A21%2F</url>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是我第一次搭建博客，为了方便身边的小伙伴搭建自己的博客。我打算把博客搭建的流程记录下来，我这个博客是通过github使用hexo博客框架搭建起来的。这篇博客主要介绍Node.js的下载及安装和GitHub账号的注册以及Git For Windows的下载安装。 为什么要安装Node.js和Git For Windows: 我们使用的博客框架是Hexo，Hexo是一个快速、简洁且高效的博客框架。 Hexo框架必须由Node.js和Git For Windows的支持。 安装Hexo博客框架的具体的要求请进入Hexo官方文档了解：1https://hexo.io/zh-cn/docs/index.html 由于Git For Windows的下载速度十分缓慢，我在这里已经准备好了百度网盘的传送门： Git For Windows和Node.js的百度网盘安装包1网盘链接：https://pan.baidu.com/s/1kNqnMaN5q5k70he3I5Ue5Q 提取码：keyi Node.js的下载及安装 Node.js是什么： Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。 Node.js 的包管理器 npm，是全球最大的开源库生态系统。 V10.16.0版本的Node.js的下载链接： 1https://nodejs.org/dist/v10.16.0/node-v10.16.0-x64.msi Node.js的官方下载网址： 1https://nodejs.org/zh-cn/ Node.js的下载 Node.js的安装和验证 Node.js安装过程和普通的桌面应用程序一样一直点下一步，直到完成。 在cmd命令行窗口中，使用node -v命令查看安装的Node.js的版本，如果你获得下面输出结果，说明你已经成功安装了Node.js。 GitHub账号的注册 GitHub是什么： GitHub是一个基于网站和云的服务，可以帮助开发人员存储和管理他们的代码，以及跟踪和控制对代码的更改。 GitHub同时提供付费账户和免费账户。这两种账户都可以创建公开或私有的代码仓库，但付费用户支持更多功能 GitHub也提供了一些方便社会化共同软件开发的功能，即一般人口中的社群功能，包括允许用户追踪其他用户、组织、软件库的动态，对软件代码的改动和bug提出评论等。 GitHub的官方网址： 1https://github.com/ 注册GitHub： 按照图片上的提示写入用户名，邮箱和密码后，点击Sign up for GitHub完成注册的第一步。 完成图片验证后按照下边的图片选择免费版即可，点击Continue完成注册的第二步。 下边的三个问题随便填写后点击Submit或者直接点击skip this step即可完成GitHub账号的注册。 完成注册后的用户界面如下图所示，这时候的账号还不能立即使用。还需要验证你的邮箱，打开邮箱点击GitHub放给我们的邮件中的链接即可验证邮箱。 Git For Windows的下载及安装 Git是什么： Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目 Git的官方下载地址 1https://git-scm.com/downloads 下载Git,点击红框即可下载Git。 Git的安装和验证 Git安装过程和普通的桌面应用程序一样一直点下一步，直到完成。 在cmd命令行窗口中，使用git –version命令查看安装的Git的版本，如果你获得下面输出结果，说明你已经成功安装了Git。 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>node</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[关于Hexo命令的问题]]></title>
     <url>%2F2019%2F07%2F15%2F%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BAHexo-deploy%E5%91%BD%E4%BB%A4%E6%8A%A5%E9%94%99%2F</url>
-    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在使用Hexo工具来完善我们的博客时，我们有时也会忘记一些基础的命令。这篇博客是我在安装部署Hexo时遇到的问题和解办法，希望对大家有所帮助。 使用Hexo deploy命令生成静态博客时出错 第一种出错情况如下 1ERROR Deployer not found: 通常使用该命令解决此问题 1npm install hexo-deployer-git --save 第二种出错情况如下 1ERROR Deployer not found: git 通常使用该命令解决此问题 1npm install hexo-server --save 静态博客Hexo命令流程 生成一个博客日志 1hexo new 文件名 清理博客缓存 1heox clean 生成静态博客文件 1hexo generate 在本地运行博客,默认端口为4000 1hexo server 如果本机的4000端口已经被，可以通过下边的命令使用其他端口 1hexo server -port 未被使用的端口号 部署博客到远端 1hexo deploy 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在使用Hexo工具来完善我们的博客时，我们有时也会忘记一些基础的命令。这篇博客是我在安装部署Hexo时遇到的问题和解办法，希望对大家有所帮助。 使用Hexo deploy命令出错 第一种出错情况如下 1ERROR Deployer not found: 通常使用该命令解决此问题 1npm install hexo-deployer-git --save 第二种出错情况如下 1ERROR Deployer not found: git 通常使用该命令解决此问题 1npm install hexo-server --save 静态博客Hexo命令流程 生成一个博客日志 1hexo new 文件名 清理博客缓存 1heox clean 生成静态博客文件 1hexo generate 在本地运行博客,默认端口为4000 1hexo server 如果本机的4000端口已经被，可以通过下边的命令使用其他端口 1hexo server -port 未被使用的端口号 部署博客到远端 1hexo deploy 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
       <categories>
-        <category>网站</category>
+        <category>博客</category>
       </categories>
       <tags>
         <tag>博客</tag>
