@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[使用github搭建博客(三)]]></title>
     <url>%2F2019%2F07%2F18%2F%E4%BD%BF%E7%94%A8github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A23%2F</url>
-    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是第三篇介绍通过Hexo博客框架在GitHub上创建个人博客网站的教程，希望能大家有所帮助。这篇博客主要介绍本地Hexo框架的安装。 Hexo框架的安装 详细操作可以点击Hexo进行查看。 1https://hexo.io/zh-cn/ 在Blog文件夹中鼠标右键打开Git Bash Here后按照顺序使用下边的命令 安装Hexo框架 1npm install hexo-cli -g 初始化博客文件 1hexo init &quot;博客名(可随意)&quot; 进入初始化成功的博客文件 1cd &quot;博客名(初始化时的博客文件名)&quot; 安装博客依赖 1npm install 在本地启动你的博客 1hexo server 由于Hexo默认安装的是官方主题，本机4000端口的网页样式应该与下图一样。 温馨提醒 这期是在本地生成了静态的官方博客框架，想要将您的博客同步到远端，请等待下一期更新。 点击本地博客查看本机已经安装好的博客框架。 1http://localhost:4000 如果大家对Hexo命令不太熟悉的话可以点击Hexo命令查看。 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是第三篇介绍通过Hexo博客框架在GitHub上创建个人博客网站的教程，希望能大家有所帮助。这篇博客主要介绍本地Hexo框架的安装。 Hexo框架的安装 详细操作可以点击Hexo进行查看。 1https://hexo.io/zh-cn/ 新建Blog(可以自定义名)文件夹后在文件夹中鼠标右键打开Git Bash Here后按照顺序使用下边的命令。 安装Hexo框架 1npm install hexo-cli -g 初始化博客文件 1hexo init &quot;博客名(可随意)&quot; 进入初始化成功的博客文件 1cd &quot;博客名(初始化时的博客文件名)&quot; 安装博客依赖 1npm install 在本地启动你的博客 1hexo server 由于Hexo默认安装的是官方主题，本机4000端口的网页样式应该与下图一样。 温馨提醒 这期是在本地生成了静态的官方博客框架，想要将您的博客同步到远端，请等待下一期更新。 点击本地博客查看本机已经安装好的博客框架。 1http://localhost:4000 如果大家对Hexo命令不太熟悉的话可以点击Hexo命令查看。 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
       <categories>
         <category>博客</category>
       </categories>
