@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[使用github搭建博客(四)]]></title>
+    <url>%2F2019%2F07%2F19%2F%E4%BD%BF%E7%94%A8github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A24%2F</url>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是第三篇介绍通过Hexo博客框架在GitHub上创建个人博客网站的教程，希望能大家有所帮助。这篇博客主要介绍本地编辑软件Sublime的安装和本地Hexo编辑以及Hexo同步到GitHub的教程。 Sublime的安装 Sublime是什么 Sublime Text具有漂亮的用户界面和强大的功能，例如代码缩略图，Python的插件，代码段等。还可自定义键绑定，菜单和工具栏。 Sublime Text 的主要功能包括：拼写检查，书签，完整的 Python API ， Goto 功能，即时项目切换，多选择，多窗口等等。 Sublime Text 是一个跨平台的编辑器，同时支持Windows、Linux、Mac OS X等操作系统。 在这里我们主要是用Sublime来编辑.md文件和.yml格式的文件。 Sublime官方网站 1http://www.sublimetext.com/ 本地博客文章的创建与编辑 文章的创建 在上篇的Blog文件下文门采用hexo init “博客名”(可随意)命令生成了，一个本地的博客文件。进入这个文件中使用鼠标右键打开Git Bash Here后使用下边的命令。 创建博客新文章，使用Sublime打开路径为\博客名\source_posts\文章名.md进行编辑。 1Hexo new &quot;文章名&quot; 如果大家对Hexo命令不太熟悉的话可以点击Hexo命令查看。 本地Hexo同步到GitHub 配置_config.yml文件(只标注了需要更改的项目) 站点配置 12345# Sitetitle: Jade // 网站标题subtitle: Jade // 网站副标题description: Jade // 网站描述author: Jade // 您的名字 URL配置 12# URLurl: http://blogwenbo.com/ // https://+仓库名 Git部署配置 1234deploy:type: git // 类型repo: http://github.com/gclcode/gclcode.github.io.git // 仓库链接地址branch: master // 分支 博客配置文件调试完成，上传测试(按照顺序执行下列命令) 配置用户名和密码 12git config --global user.email &quot;GitHub账号绑定的邮箱地址&quot;git config --global user.name &quot;GitHub账号名&quot; 清理博客缓存 1heox clean 生成静态博客文件 1hexo generate 部署博客到远端,如果出现保持请点击解决办法进行查看,如果没有报错那就是成功了。 1hexo deploy 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>sublime</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[使用github搭建博客(三)]]></title>
     <url>%2F2019%2F07%2F18%2F%E4%BD%BF%E7%94%A8github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A23%2F</url>
     <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是第三篇介绍通过Hexo博客框架在GitHub上创建个人博客网站的教程，希望能大家有所帮助。这篇博客主要介绍本地Hexo框架的安装。 Hexo框架的安装 详细操作可以点击Hexo进行查看。 1https://hexo.io/zh-cn/ 新建Blog(可以自定义名)文件夹后在文件夹中鼠标右键打开Git Bash Here后按照顺序使用下边的命令。 安装Hexo框架 1npm install hexo-cli -g 初始化博客文件 1hexo init &quot;博客名(可随意)&quot; 进入初始化成功的博客文件 1cd &quot;博客名(初始化时的博客文件名)&quot; 安装博客依赖 1npm install 在本地启动你的博客 1hexo server 由于Hexo默认安装的是官方主题，本机4000端口的网页样式应该与下图一样。 温馨提醒 这期是在本地生成了静态的官方博客框架，想要将您的博客同步到远端，请等待下一期更新。 点击本地博客查看本机已经安装好的博客框架。 1http://localhost:4000 如果大家对Hexo命令不太熟悉的话可以点击Hexo命令查看。 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
@@ -19,8 +32,8 @@
         <category>博客</category>
       </categories>
       <tags>
-        <tag>shh</tag>
         <tag>github</tag>
+        <tag>shh</tag>
       </tags>
   </entry>
   <entry>
