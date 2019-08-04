@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[在VMware中CentOS-7设置静态IP]]></title>
+    <url>%2F2019%2F08%2F04%2F%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%2F</url>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这篇主要介绍如何设置VMware虚拟机中的CentOS-7的静态IP。写这篇的原因是在学习Hadoop的时候配置虚拟Linux遇到了网络配置问题，希望我写的这篇博客能够帮助大家解决问题。 VMware和CentOS-7的安装 VMware和CentOS-7的安装不是我们的重点，所以我们就跳过。如果不会的童鞋可以按照下面的网页链接进行安装。 VMware15（32/64）位下载地址： 1https://pan.baidu.com/s/1bTFt1hhPHIZ5YFbatN95bw 提取码: t4v3 VMware15（32/64）位安装教程： 1https://mp.weixin.qq.com/s/28fb8SQgUz2lcHSCCk_UBg CentOS 7/64位下载地址： 1pan.baidu.com/s/1HLbQrE5M2UW1S7KFBuFLZQ 提取码: 24d4 CentOS 7/64位安装教程： 1https://mp.weixin.qq.com/s/0X1fq8xJjBQ5eKU8gQllWw 关闭VMware的DHCP设置 打开VMware依次打开编辑-&gt;虚拟机网络配置。 选择VMnet8，取消勾选”使用本地DHCP服务将IP地址分配给虚拟机”选项。 点击”NAT设置”查看一下GATEWAY地址。 虚拟机裸机网络设置 点击虚拟机右键设置，按照下图设置即可。移除声卡和打印机可以随意。 关闭CentOS-7防火墙 使用firewall-cmd -stat命令查看Linux的防火墙是否关闭。 如果回显如下图，则已经关闭了不需要在进行调整。 如果回显是running则说明防火墙正在运行，需要依次运行下边的命令。12systemctl stop firewalld.service # 关闭防火墙systemctl disable firewalld.service # 禁止开机启动防火墙 设置CentOS-7网关 打开CentOS，使用vim /etc/sysconfig/network命令进行编辑，添加下面的信息。123NETWORKING=yesHOSTNAME=localhost.localdomainGATEWAY=192.168.44.2 #设置成你在虚拟机网络配置查看到的网关 设置CentOS-7静态IP 使用ifconfig命令查看网卡名，如下图我的网卡名为eno16777736。 使用vim /etc/sysconfig/network-scripts/ifcfg-eno16777736命令编辑IP地址要求此IP与VMware的VMnet8子网IP在同一网段，打开后注释或删除原来的ONBOOT和BOOTPROTO。添加下边的参数。 123456ONBOOT=yesBOOTPROTO=staticNETNASK=255.255.255.0 # 子网掩码GATEWAY=192.168.1.1 # 网关DNS1=192.168.1.1 # 可以设置为网关IPADDR=192.168.44.100 #与VMnet8同一网段 更改主机名以及重启网络并检查是否设置正确 使用下边的命令更改主机名 1hostnamectl set-hostname 主机名 # 主机名不能有下划线 使用下边的命令重启网络 1systemctl restart network 使用ping命令检查网络是否设置正常 内网检查 电脑本机ip 192.168.31.219 虚拟机CentOS-7ip 192.168.44.100 外网检查 通过ping www.baidu.com检查是否能连接外网 如果有错误请从新设置 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>vmware</tag>
+        <tag>centos-7</tag>
+        <tag>static ip</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[使用github搭建博客(四)]]></title>
     <url>%2F2019%2F07%2F19%2F%E4%BD%BF%E7%94%A8github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A24%2F</url>
     <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是第三篇介绍通过Hexo博客框架在GitHub上创建个人博客网站的教程，希望能大家有所帮助。这篇博客主要介绍本地编辑软件Sublime的安装和本地Hexo编辑以及Hexo同步到GitHub的教程。 Sublime的安装 Sublime是什么 Sublime Text具有漂亮的用户界面和强大的功能，例如代码缩略图，Python的插件，代码段等。还可自定义键绑定，菜单和工具栏。 Sublime Text 的主要功能包括：拼写检查，书签，完整的 Python API ， Goto 功能，即时项目切换，多选择，多窗口等等。 Sublime Text 是一个跨平台的编辑器，同时支持Windows、Linux、Mac OS X等操作系统。 在这里我们主要是用Sublime来编辑.md文件和.yml格式的文件。 Sublime官方网站 1http://www.sublimetext.com/ 本地博客文章的创建与编辑 文章的创建 在上篇的Blog文件下文门采用hexo init “博客名”(可随意)命令生成了，一个本地的博客文件。进入这个文件中使用鼠标右键打开Git Bash Here后使用下边的命令。 创建博客新文章，使用Sublime打开路径为\博客名\source_posts\文章名.md进行编辑。 1Hexo new &quot;文章名&quot; 如果大家对Hexo命令不太熟悉的话可以点击Hexo命令查看。 本地Hexo同步到GitHub 配置_config.yml文件(只标注了需要更改的项目) 站点配置 12345# Sitetitle: Jade // 网站标题subtitle: Jade // 网站副标题description: Jade // 网站描述author: Jade // 您的名字 URL配置 12# URLurl: http://blogwenbo.com/ // https://+仓库名 Git部署配置 1234deploy:type: git // 类型repo: http://github.com/gclcode/gclcode.github.io.git // 仓库链接地址branch: master // 分支 博客配置文件调试完成，上传测试(按照顺序执行下列命令) 配置用户名和密码 12git config --global user.email &quot;GitHub账号绑定的邮箱地址&quot;git config --global user.name &quot;GitHub账号名&quot; 清理博客缓存 1heox clean 生成静态博客文件 1hexo generate 部署博客到远端,如果出现保持请点击解决办法进行查看,如果没有报错那就是成功了。 1hexo deploy 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
@@ -8,8 +21,8 @@
         <category>博客</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>hexo</tag>
+        <tag>github</tag>
         <tag>sublime</tag>
       </tags>
   </entry>
