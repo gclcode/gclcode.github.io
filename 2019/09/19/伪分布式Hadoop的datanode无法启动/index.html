@@ -95,27 +95,21 @@
 
 
 
-  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;这篇主要介绍如何设置VMware虚拟机中的CentOS-7的静态IP。写这篇的原因是在学习Hadoop的时候配置虚拟Linux遇到了网络配置问题，希望我写的这篇博客能够帮助大家解决问题。">
-<meta name="keywords" content="centos-7,vmware,static ip">
+  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;这篇主要介绍如何解决搭建的伪分布hadoop启动时无法启动datanode节点的问题。最近由于学习需要用到Hadoop的伪分布式自己搭建了一个，没想到在测试时报了错。经过我在网上的不断尝试终于找到了解决办法，希望我写的这篇博客能够帮助大家解决问题。">
+<meta name="keywords" content="hadoop,centos-7,datanode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在VMware中CentOS-7设置静态IP">
-<meta property="og:url" content="https://gclcode.github.io/2019/08/04/在VMware中CentOS-7设置静态IP/index.html">
+<meta property="og:title" content="伪分布式Hadoop的datanode无法启动">
+<meta property="og:url" content="https://gclcode.github.io/2019/09/19/伪分布式Hadoop的datanode无法启动/index.html">
 <meta property="og:site_name" content="JadeBlog">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;这篇主要介绍如何设置VMware虚拟机中的CentOS-7的静态IP。写这篇的原因是在学习Hadoop的时候配置虚拟Linux遇到了网络配置问题，希望我写的这篇博客能够帮助大家解决问题。">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;这篇主要介绍如何解决搭建的伪分布hadoop启动时无法启动datanode节点的问题。最近由于学习需要用到Hadoop的伪分布式自己搭建了一个，没想到在测试时报了错。经过我在网上的不断尝试终于找到了解决办法，希望我写的这篇博客能够帮助大家解决问题。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://gclcode.github.io/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_1.png">
-<meta property="og:image" content="https://gclcode.github.io/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_2.png">
-<meta property="og:image" content="https://gclcode.github.io/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_3.png">
-<meta property="og:image" content="https://gclcode.github.io/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_8.png">
-<meta property="og:image" content="https://gclcode.github.io/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_4.png">
-<meta property="og:image" content="https://gclcode.github.io/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_5.png">
-<meta property="og:image" content="https://gclcode.github.io/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_6.png">
-<meta property="og:image" content="https://gclcode.github.io/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_7.png">
-<meta property="og:updated_time" content="2019-08-05T10:23:47.520Z">
+<meta property="og:image" content="https://gclcode.github.io/images/%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8FHadoop%E7%9A%84datanode%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8_1.png">
+<meta property="og:image" content="https://gclcode.github.io/images/%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8FHadoop%E7%9A%84datanode%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8_2.png">
+<meta property="og:updated_time" content="2019-09-19T00:47:10.128Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在VMware中CentOS-7设置静态IP">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;这篇主要介绍如何设置VMware虚拟机中的CentOS-7的静态IP。写这篇的原因是在学习Hadoop的时候配置虚拟Linux遇到了网络配置问题，希望我写的这篇博客能够帮助大家解决问题。">
-<meta name="twitter:image" content="https://gclcode.github.io/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_1.png">
+<meta name="twitter:title" content="伪分布式Hadoop的datanode无法启动">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;这篇主要介绍如何解决搭建的伪分布hadoop启动时无法启动datanode节点的问题。最近由于学习需要用到Hadoop的伪分布式自己搭建了一个，没想到在测试时报了错。经过我在网上的不断尝试终于找到了解决办法，希望我写的这篇博客能够帮助大家解决问题。">
+<meta name="twitter:image" content="https://gclcode.github.io/images/%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8FHadoop%E7%9A%84datanode%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8_1.png">
 
 
 
@@ -123,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="https://gclcode.github.io/2019/08/04/在VMware中CentOS-7设置静态IP/">
+  <link rel="canonical" href="https://gclcode.github.io/2019/09/19/伪分布式Hadoop的datanode无法启动/">
 
 
 
@@ -133,7 +127,7 @@
   };
 </script>
 
-  <title>在VMware中CentOS-7设置静态IP | JadeBlog</title>
+  <title>伪分布式Hadoop的datanode无法启动 | JadeBlog</title>
   
 
 
@@ -357,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gclcode.github.io/2019/08/04/在VMware中CentOS-7设置静态IP/">
+    <link itemprop="mainEntityOfPage" href="https://gclcode.github.io/2019/09/19/伪分布式Hadoop的datanode无法启动/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jade">
@@ -374,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">在VMware中CentOS-7设置静态IP
+          <h1 class="post-title" itemprop="name headline">伪分布式Hadoop的datanode无法启动
 
               
             
@@ -400,23 +394,13 @@
                 
               
 
-              <time title="创建时间：2019-08-04 08:35:43" itemprop="dateCreated datePublished" datetime="2019-08-04T08:35:43+08:00">2019-08-04</time>
+              <time title="创建时间：2019-09-19 08:14:49 / 修改时间：08:47:10" itemprop="dateCreated datePublished" datetime="2019-09-19T08:14:49+08:00">2019-09-19</time>
             </span>
           
 
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-05 18:23:47" itemprop="dateModified" datetime="2019-08-05T18:23:47+08:00">2019-08-05</time>
-              </span>
             
           
 
@@ -429,7 +413,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hadoop/" itemprop="url" rel="index"><span itemprop="name">Hadoop</span></a></span>
 
                 
                 
@@ -477,90 +461,23 @@
       
 
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这篇主要介绍如何设置VMware虚拟机中的CentOS-7的静态IP。写这篇的原因是在学习<a href="https://www.cnblogs.com/yucongblog/p/6650822.html" target="_blank" rel="noopener">Hadoop</a>的时候配置虚拟Linux遇到了网络配置问题，希望我写的这篇博客能够帮助大家解决问题。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这篇主要介绍如何解决搭建的伪分布hadoop启动时无法启动datanode节点的问题。最近由于学习需要用到Hadoop的伪分布式自己搭建了一个，没想到在测试时报了错。经过我在网上的不断尝试终于找到了解决办法，希望我写的这篇博客能够帮助大家解决问题。</p>
 <a id="more"></a>
 <hr>
-<h2 id="VMware和CentOS-7的安装"><a href="#VMware和CentOS-7的安装" class="headerlink" title="VMware和CentOS-7的安装"></a>VMware和CentOS-7的安装</h2><ul>
-<li><p>VMware和CentOS-7的安装不是我们的重点，所以我们就跳过。如果不会的童鞋可以按照下面的网页链接进行安装。</p>
-<ul>
-<li><p>VMware15（32/64）位下载地址：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://pan.baidu.com/s/1bTFt1hhPHIZ5YFbatN95bw    提取码: t4v3</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>VMware15（32/64）位安装教程：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://mp.weixin.qq.com/s/28fb8SQgUz2lcHSCCk_UBg</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>CentOS 7/64位下载地址：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pan.baidu.com/s/1HLbQrE5M2UW1S7KFBuFLZQ    提取码: 24d4</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>CentOS 7/64位安装教程：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://mp.weixin.qq.com/s/0X1fq8xJjBQ5eKU8gQllWw</span><br></pre></td></tr></table></figure>
-
-</li>
+<h2 id="查找无法启动的原因"><a href="#查找无法启动的原因" class="headerlink" title="查找无法启动的原因"></a>查找无法启动的原因</h2><ul>
+<li>想要知道datanode节点无法启动的原因就，必须知道到底是哪个地方报错了。这个时候就需要找到datanode的log文件，查看启动报错的具体信息。<ul>
+<li>Datanode的log存放地址<br>  <img src="/images/%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8FHadoop%E7%9A%84datanode%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8_1.png" alt></li>
+<li>报错的具体原因<br>  <img src="/images/%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8FHadoop%E7%9A%84datanode%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8_2.png" alt></li>
 </ul>
 </li>
 </ul>
 <hr>
-<h2 id="关闭VMware的DHCP设置"><a href="#关闭VMware的DHCP设置" class="headerlink" title="关闭VMware的DHCP设置"></a>关闭VMware的DHCP设置</h2><ul>
-<li><p>打开VMware依次打开编辑-&gt;虚拟机网络配置。</p>
-<p>  <img src="/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_1.png" alt></p>
-</li>
-<li><p>选择VMnet8，取消勾选”使用本地DHCP服务将IP地址分配给虚拟机”选项。</p>
-<p>  <img src="/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_2.png" alt></p>
-</li>
-<li><p>点击”NAT设置”查看一下GATEWAY地址。</p>
-<p>  <img src="/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_3.png" alt></p>
-</li>
+<h2 id="解决无法启动的原因"><a href="#解决无法启动的原因" class="headerlink" title="解决无法启动的原因"></a>解决无法启动的原因</h2><ul>
+<li>经过查看日志文件发现是由于DataNode和NameNode的clusterID不匹配导致的，在hdfs-site.xml里配置的dfs.datanode.data.dir路径下有个VERSION文件，需要把里面的clusterID修改成和dfs.namenode.name.dir路径下的VERSION里的clusterID一致。</li>
 </ul>
 <hr>
-<h2 id="虚拟机裸机网络设置"><a href="#虚拟机裸机网络设置" class="headerlink" title="虚拟机裸机网络设置"></a>虚拟机裸机网络设置</h2><ul>
-<li><p>点击虚拟机右键设置，按照下图设置即可。移除声卡和打印机可以随意。</p>
-<p>  <img src="/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_8.png" alt></p>
-</li>
-</ul>
-<hr>
-<h2 id="关闭CentOS-7防火墙"><a href="#关闭CentOS-7防火墙" class="headerlink" title="关闭CentOS-7防火墙"></a>关闭CentOS-7防火墙</h2><ul>
-<li>使用<label style="color:red">firewall-cmd -stat</label>命令查看Linux的防火墙是否关闭。<ul>
-<li>如果回显如下图，则已经关闭了不需要在进行调整。<br><img src="/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_4.png" alt></li>
-<li>如果回显是<label style="color:red">running</label>则说明防火墙正在运行，需要依次运行下边的命令。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service   # 关闭防火墙</span><br><span class="line">systemctl disable firewalld.service  # 禁止开机启动防火墙</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="设置CentOS-7网关"><a href="#设置CentOS-7网关" class="headerlink" title="设置CentOS-7网关"></a>设置CentOS-7网关</h2><ul>
-<li>打开CentOS，使用<label style="color:red">vim /etc/sysconfig/network</label>命令进行编辑，添加下面的信息。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NETWORKING=yes</span><br><span class="line">HOSTNAME=localhost.localdomain</span><br><span class="line">GATEWAY=192.168.44.2 #设置成你在虚拟机网络配置查看到的网关</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<hr>
-<h2 id="设置CentOS-7静态IP"><a href="#设置CentOS-7静态IP" class="headerlink" title="设置CentOS-7静态IP"></a>设置CentOS-7静态IP</h2><ul>
-<li><p>使用<label style="color:red">ifconfig</label>命令查看网卡名，如下图我的网卡名为eno16777736。</p>
-<p>  <img src="/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_5.png" alt></p>
-</li>
-<li><p>使用<label style="color:red">vim /etc/sysconfig/network-scripts/ifcfg-eno16777736</label>命令编辑IP地址要求此IP与VMware的VMnet8子网IP在同一网段，打开后注释或删除原来的ONBOOT和BOOTPROTO。添加下边的参数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ONBOOT=yes</span><br><span class="line">BOOTPROTO=static</span><br><span class="line">NETNASK=255.255.255.0   # 子网掩码</span><br><span class="line">GATEWAY=192.168.1.1     # 网关</span><br><span class="line">DNS1=192.168.1.1        # 可以设置为网关</span><br><span class="line">IPADDR=192.168.44.100 #与VMnet8同一网段</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<hr>
-<h2 id="更改主机名以及重启网络并检查是否设置正确"><a href="#更改主机名以及重启网络并检查是否设置正确" class="headerlink" title="更改主机名以及重启网络并检查是否设置正确"></a>更改主机名以及重启网络并检查是否设置正确</h2><ul>
-<li><p>使用下边的命令更改主机名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl set-hostname 主机名 # 主机名不能有下划线</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用下边的命令重启网络</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart network</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用<label style="color:red">ping</label>命令检查网络是否设置正常</p>
-<ul>
-<li><p>内网检查 电脑本机ip 192.168.31.219 虚拟机CentOS-7ip 192.168.44.100<br><img src="/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_6.png" alt></p>
-</li>
-<li><p>外网检查 通过<label style="color:red">ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></label>检查是否能连接外网<br><img src="/images/%E5%9C%A8VMware%E4%B8%ADCentOS-7%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP_7.png" alt></p>
-</li>
-</ul>
-</li>
-<li><p>如果有错误请从新设置</p>
-</li>
+<h2 id="Datanode无法的原因"><a href="#Datanode无法的原因" class="headerlink" title="Datanode无法的原因"></a>Datanode无法的原因</h2><ul>
+<li>经过查找出错源头是因为执行namenode格式化命令(hdfs namenode -format)时会重新生成namenode的clusterID，而datanode的clusterID还是旧的没有改变。</li>
 </ul>
 <hr>
 <blockquote>
@@ -635,11 +552,11 @@
         
         <div class="post-tags">
           
+            <a href="/tags/hadoop/" rel="tag"><i class="fa fa-tag"></i>hadoop</a>
+          
             <a href="/tags/centos-7/" rel="tag"><i class="fa fa-tag"></i>centos-7</a>
           
-            <a href="/tags/vmware/" rel="tag"><i class="fa fa-tag"></i>vmware</a>
-          
-            <a href="/tags/static-ip/" rel="tag"><i class="fa fa-tag"></i>static ip</a>
+            <a href="/tags/datanode/" rel="tag"><i class="fa fa-tag"></i>datanode</a>
           
         </div>
       
@@ -652,8 +569,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/19/使用github搭建博客4/" rel="next" title="使用github搭建博客(四)">
-                <i class="fa fa-chevron-left"></i> 使用github搭建博客(四)
+              <a href="/2019/08/04/在VMware中CentOS-7设置静态IP/" rel="next" title="在VMware中CentOS-7设置静态IP">
+                <i class="fa fa-chevron-left"></i> 在VMware中CentOS-7设置静态IP
               </a>
             
           </div>
@@ -661,10 +578,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/19/伪分布式Hadoop的datanode无法启动/" rel="prev" title="伪分布式Hadoop的datanode无法启动">
-                伪分布式Hadoop的datanode无法启动 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -873,7 +786,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#VMware和CentOS-7的安装"><span class="nav-number">1.</span> <span class="nav-text">VMware和CentOS-7的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭VMware的DHCP设置"><span class="nav-number">2.</span> <span class="nav-text">关闭VMware的DHCP设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机裸机网络设置"><span class="nav-number">3.</span> <span class="nav-text">虚拟机裸机网络设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭CentOS-7防火墙"><span class="nav-number">4.</span> <span class="nav-text">关闭CentOS-7防火墙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置CentOS-7网关"><span class="nav-number">5.</span> <span class="nav-text">设置CentOS-7网关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置CentOS-7静态IP"><span class="nav-number">6.</span> <span class="nav-text">设置CentOS-7静态IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改主机名以及重启网络并检查是否设置正确"><span class="nav-number">7.</span> <span class="nav-text">更改主机名以及重启网络并检查是否设置正确</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查找无法启动的原因"><span class="nav-number">1.</span> <span class="nav-text">查找无法启动的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决无法启动的原因"><span class="nav-number">2.</span> <span class="nav-text">解决无法启动的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Datanode无法的原因"><span class="nav-number">3.</span> <span class="nav-text">Datanode无法的原因</span></a></li></ol></div>
             
 
           </div>
@@ -1062,7 +975,7 @@
 
 <script>
   window.livereOptions = {
-    refer: '2019/08/04/在VMware中CentOS-7设置静态IP/'
+    refer: '2019/09/19/伪分布式Hadoop的datanode无法启动/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
