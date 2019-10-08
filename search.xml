@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[网上商城项目(SSH)-SSH框架整合-1]]></title>
+    <url>%2F2019%2F10%2F08%2F%E7%BD%91%E4%B8%8A%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE(SSH)-SSH%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88-1%2F</url>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最近老师带一个网上商城的SSH项目，自己想把项目的过程记录下来。一希望自己能将做项目中的一些BUG的解决方法分享给大家，二来可以帮助那些期末做课设的同学。本项目的SSH是指Spring4+Struts2+Hibernate5，项目中需要的jar包我会放在本章的百度网盘链接中。如果后续还需要添加jar包我会在需要添加的地方加以说明并会附上百度网盘链接。 开发环境说明 网上商城项目SSH项目开发环境,部分辅助软件不做陈述。 MySQL 5 Eclipse EE Java 1.8 Tomcat 9.0 下载整合SSH需要的jar 搭建Spring4环境 搭建Hibernate环境 整合Spring4和Hibernate5 搭建Struts2环境 整合Spring4和Struts2 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
+      <categories>
+        <category>网站开发</category>
+      </categories>
+      <tags>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[伪分布式Hadoop的datanode无法启动]]></title>
     <url>%2F2019%2F09%2F19%2F%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8FHadoop%E7%9A%84datanode%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%2F</url>
     <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这篇主要介绍如何解决搭建的伪分布hadoop启动时无法启动datanode节点的问题。最近由于学习需要用到Hadoop的伪分布式自己搭建了一个，没想到在测试时报了错。经过我在网上的不断尝试终于找到了解决办法，希望我写的这篇博客能够帮助大家解决问题。 查找无法启动的原因 想要知道datanode节点无法启动的原因就，必须知道到底是哪个地方报错了。这个时候就需要找到datanode的log文件，查看启动报错的具体信息。 Datanode的log存放地址 报错的具体原因 解决无法启动的原因 经过查看日志文件发现是由于DataNode和NameNode的clusterID不匹配导致的，在hdfs-site.xml里配置的dfs.datanode.data.dir路径下有个VERSION文件，需要把里面的clusterID修改成和dfs.namenode.name.dir路径下的VERSION里的clusterID一致。 Datanode无法的原因 经过查找出错源头是因为执行namenode格式化命令(hdfs namenode -format)时会重新生成namenode的clusterID，而datanode的clusterID还是旧的没有改变。 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
@@ -77,7 +88,7 @@
   <entry>
     <title><![CDATA[关于Hexo命令的问题]]></title>
     <url>%2F2019%2F07%2F15%2F%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BAHexo-deploy%E5%91%BD%E4%BB%A4%E6%8A%A5%E9%94%99%2F</url>
-    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在使用Hexo工具来完善我们的博客时，我们有时也会忘记一些基础的命令。这篇博客是我在安装部署Hexo时遇到的问题和解办法，希望对大家有所帮助。 使用Hexo deploy命令出错 第一种出错情况如下 1ERROR Deployer not found: 通常使用该命令解决此问题 1npm install hexo-deployer-git --save 第二种出错情况如下 1ERROR Deployer not found: git 通常使用该命令解决此问题 1npm install hexo-server --save 静态博客Hexo命令流程 生成一个博客日志 1hexo new 文件名 清理博客缓存 1heox clean 生成静态博客文件 1hexo generate 在本地运行博客,默认端口为4000 1hexo server 如果本机的4000端口已经被，可以通过下边的命令使用其他端口 1hexo server -port 未被使用的端口号 部署博客到远端 1hexo deploy 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在使用Hexo工具来完善我们的博客时，我们有时也会忘记一些基础的命令。这篇博客是我在安装部署Hexo时遇到的问题和解办法，希望对大家有所帮助。 使用Hexo deploy命令出错 第一种出错情况如下 1ERROR Deployer not found: 通常使用该命令解决此问题 1npm install hexo-deployer-git --save 第二种出错情况如下 1ERROR Deployer not found: git 通常使用该命令解决此问题 1npm install hexo-server --save 静态博客Hexo命令流程 生成一个博客日志 1hexo new 文件名 清理博客缓存 1heox clean 生成静态博客文件 1hexo generate 在本地运行博客,默认端口为4000 1hexo server 如果本机的4000端口已经被使用，可以通过下边的命令使用其他端口 1hexo server -port 未被使用的端口号 部署博客到远端 1hexo deploy 本文作者: Jade版权声明： 未经授权禁止使用，转载请注明出处！]]></content>
       <categories>
         <category>博客</category>
       </categories>
