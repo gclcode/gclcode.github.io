@@ -600,7 +600,7 @@
 <hr>
 <h2 id="整合Spring4和Hibernate5"><a href="#整合Spring4和Hibernate5" class="headerlink" title="整合Spring4和Hibernate5"></a>整合Spring4和Hibernate5</h2><ul>
 <li><p>在Java Resources下的src中创建jdbc.properties,将数据库的链接信息单独提取出来便于后期优化,内容如下所示。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jdbc.driverClassName=com.mysql.jdbc.Driver</span><br><span class="line">jdbc.url = jdbc:mysql://106.15.73.43:3306/shop?useSSL=false</span><br><span class="line">jdbc.username = root</span><br><span class="line">jdbc.password = 123456</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jdbc.driverClassName=com.mysql.jdbc.Driver</span><br><span class="line">jdbc.url = jdbc:mysql://***.**.**.**:3306/shop?useSSL=false</span><br><span class="line">jdbc.username = ****</span><br><span class="line">jdbc.password = ******</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>整合spring和hibernate需要在beans.xml添加配置如下。</p>
 <ul>
